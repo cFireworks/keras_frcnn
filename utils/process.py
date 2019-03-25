@@ -2,8 +2,6 @@ import numpy as np
 import cv2
 
 
-
-
 def format_img_size(img, cfg):
     """ formats the image size based on config """
     img_min_side = float(cfg.im_size)
