@@ -56,7 +56,7 @@ class FixedBatchNormalization(Layer):
         broadcast_shape = [1] * len(input_shape)
         broadcast_shape[self.axis] = input_shape[self.axis]
 
-        if sorted(reduction_axes) == range(K.ndim(x))[:-1]:
+        if sorted(reduction_axes) == list(range(K.ndim(x)))[:-1]:
             x_normed = K.batch_normalization(
                 x, self.running_mean, self.running_std,
                 self.beta, self.gamma,
